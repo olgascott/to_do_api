@@ -7,6 +7,7 @@ gem 'pg'
 gem 'rails-api', '~> 0.4.0'
 gem 'active_model_serializers', '~> 0.8.3'
 gem 'rack-cors'
+gem 'responders'
 
 # Useful gems
 gem 'annotate'
