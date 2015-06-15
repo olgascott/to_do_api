@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
   scope '/api/1', constraints: { format: :json } do
-    resource :lists, only: [:create]
+    resources :lists, only: [:create, :index]
+    resources :to_dos, only: [:create, :update]
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
