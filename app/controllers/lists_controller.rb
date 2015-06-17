@@ -15,7 +15,7 @@ class ListsController < ApplicationController
       @list.update_attributes(title: params[:title])
       render json: @list, serializer: ListSerializer, root: nil
     else
-      #error
+      api_response_unprocessable_entity
     end
   end
 
@@ -25,7 +25,7 @@ class ListsController < ApplicationController
       @list.destroy
       render json: @list, serializer: ListSerializer, root: nil
     else
-      #error
+      api_response_unprocessable_entity
     end
   end
 end

@@ -5,7 +5,7 @@ class ToDosController < ApplicationController
       @to_do = list.to_dos.create(title: params[:title])
       render json: @to_do, serializer: ToDoSerializer, root: nil
     else
-      # throw error
+      api_response_unprocessable_entity
     end
   end
 
@@ -19,7 +19,7 @@ class ToDosController < ApplicationController
       @to_do.update_attributes(to_do_params)
       render json: @to_do, serializer: ToDoSerializer, root: nil
     else
-      # Error
+      api_response_unprocessable_entity
     end
   end
 
@@ -29,7 +29,7 @@ class ToDosController < ApplicationController
       @to_do.destroy
       render json: @to_do, serializer: ToDoSerializer, root: nil
     else
-      # Error
+      api_response_unprocessable_entity
     end
   end
 end

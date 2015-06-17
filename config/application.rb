@@ -31,5 +31,9 @@ module ToDoApi
                  methods: [:get, :put, :post, :delete]
       end
     end
+
+    config.generators do |g|
+      g.test_framework :rspec
+    end
   end
 end
