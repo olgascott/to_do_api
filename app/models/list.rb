@@ -9,5 +9,7 @@
 #
 
 class List < ActiveRecord::Base
-  has_many :to_dos
+  has_many :to_dos, dependent: :destroy
+
+  default_scope { order('created_at DESC') }
 end

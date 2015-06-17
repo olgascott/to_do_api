@@ -22,4 +22,14 @@ class ToDosController < ApplicationController
       # Error
     end
   end
+
+  def destroy
+    @to_do = ToDo.find_by_id(params[:id])
+    if @to_do
+      @to_do.destroy
+      render json: @to_do, serializer: ToDoSerializer, root: nil
+    else
+      # Error
+    end
+  end
 end
